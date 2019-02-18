@@ -1,0 +1,16 @@
+body {
+  padding: 10px;
+  font-family: sans-serif;
+}
+
+.contain{
+  width : 600px 
+}
+
+.delete {
+  float: right;
+  font-weight: bold;
+  background: none;
+  border: none;
+}
+

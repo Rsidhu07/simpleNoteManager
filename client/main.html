@@ -1,0 +1,46 @@
+<head>
+  <title>Simple Note Manager</title>
+</head>
+
+<body style="background-color:rgb(211,211,211)">
+
+  <div class="container">
+    <h1>Latest Notes</h1>
+    {{> loginButtons}} <br><br>
+
+    {{#if currentUser}}
+    {{> add}} 
+    {{else}}
+    <p>Please Sign In to manage Notes!</p>    
+    
+    {{/if}}
+        <ul class=" contain">
+    {{#each notes}}
+      {{> note}}
+    {{/each}}
+    
+    </ul>
+   
+
+  </div>
+</body>
+
+<template name = "note">
+
+<li>{{text}} : <strong>Added by {{username}}</strong>
+  {{#if currentUser}}
+   <button class="delete">&times;</button>
+  {{/if}}
+</li>
+
+
+  
+</template>
+
+<template name = "add">
+  
+  <form class = "add-form">
+    <input type="text" name="text" placeholder="Add Note here..">
+  </form>
+
+</template>
